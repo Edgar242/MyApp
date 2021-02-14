@@ -43,7 +43,9 @@
 				6D4A802625D8F50E00DBDFE8 /* MyApp */,
 				6D4A802525D8F50E00DBDFE8 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		6D4A802525D8F50E00DBDFE8 /* Products */ = {
 			isa = PBXGroup;
