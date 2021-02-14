@@ -10,10 +10,9 @@ import UIKit
 class ViewControllerTarea1: UIViewController {
   @IBAction func onSwitchChangeMood(_ sender: UISwitch) {
     if switchMood.isOn {
-      print("I am happy");
-      imageViewMood.image = UIImage(named: "smiley");
+      imageViewMood.image = UIImage(systemName: "play");
     } else {
-      print("I am sad");
+      imageViewMood.image = UIImage(systemName: "stop");
     }
   }
   
