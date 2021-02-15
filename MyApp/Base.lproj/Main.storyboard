@@ -38,24 +38,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jBN-p2-boY">
-                                <rect key="frame" x="204" y="89" width="190" height="32"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="EyO-6L-nAr">
+                                <rect key="frame" x="31" y="638.5" width="211" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Habilitar"/>
-                                    <segment title="Deshabilitar"/>
-                                </segments>
-                            </segmentedControl>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EyO-6L-nAr">
-                                <rect key="frame" x="72" y="727" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderVolumeOnChange:" destination="myJ-gt-T8P" eventType="valueChanged" id="8fU-qa-GCT"/>
+                                </connections>
                             </slider>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker.wave.1.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9bf-25-SkZ">
-                                <rect key="frame" x="68" y="460" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="music.note.list" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9bf-25-SkZ">
+                                <rect key="frame" x="263" y="605.5" width="131" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X6q-Vd-KsA">
-                                <rect key="frame" x="159" y="400" width="49" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-LD-E4s">
+                                <rect key="frame" x="210" y="717" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WC9-Y6-hH8">
+                                <rect key="frame" x="34" y="490" width="347" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="backward.end.fill" catalog="system"/>
+                                    <segment title="" image="play.fill" catalog="system"/>
+                                    <segment title="" image="pause.fill" catalog="system"/>
+                                    <segment title="" image="forward.end.alt.fill" catalog="system"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onChangeVideoPlayer:" destination="myJ-gt-T8P" eventType="valueChanged" id="4zP-ty-scq"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" title="Mute" translatesAutoresizingMaskIntoConstraints="NO" id="X6q-Vd-KsA">
+                                <rect key="frame" x="305" y="707" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.96130555870000001" green="0.69526775900000004" blue="0.20819247190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="thumbTintColor" systemColor="systemTealColor"/>
@@ -63,6 +78,53 @@
                                     <action selector="onSwitchChangeMood:" destination="myJ-gt-T8P" eventType="valueChanged" id="1PQ-Oe-7eX"/>
                                 </connections>
                             </switch>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="DCW-Ba-OoT">
+                                <rect key="frame" x="35" y="134" width="346" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IEG-jK-VkO">
+                                <rect key="frame" x="333" y="89" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchOnChangeDarkBackground:" destination="myJ-gt-T8P" eventType="valueChanged" id="24q-xi-3yv"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBF-9X-hUm">
+                                <rect key="frame" x="33" y="593" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Texto a enviar" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TL0-hv-36G">
+                                <rect key="frame" x="33" y="326" width="304" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jnR-22-pe3">
+                                <rect key="frame" x="340" y="326" width="41" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="plus.message" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChangeButtonAdd:" destination="myJ-gt-T8P" eventType="touchUpInside" id="Ltz-lQ-Zmg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat fondo oscuro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKx-7K-6NO">
+                                <rect key="frame" x="33" y="99" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pNK-Ef-zgz"/>
                         <color key="backgroundColor" red="0.73655538658495689" green="1" blue="0.69076720885097465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -75,8 +137,14 @@
                     <tabBarItem key="tabBarItem" title="Tarea 1" image="doc.fill" catalog="system" id="Qr5-fG-khI"/>
                     <navigationItem key="navigationItem" id="0iw-67-Umn"/>
                     <connections>
+                        <outlet property="buttonAdd" destination="jnR-22-pe3" id="S9o-ph-82E"/>
                         <outlet property="imageViewMood" destination="9bf-25-SkZ" id="hwh-tY-nJX"/>
+                        <outlet property="segCtrlVideoPlayer" destination="WC9-Y6-hH8" id="9xV-je-tFi"/>
+                        <outlet property="sliderVolume" destination="EyO-6L-nAr" id="IGY-0q-Qje"/>
+                        <outlet property="switchDarkBackground" destination="IEG-jK-VkO" id="3fV-jm-54g"/>
                         <outlet property="switchMood" destination="X6q-Vd-KsA" id="q6x-dY-6xa"/>
+                        <outlet property="textFieldPhrase" destination="TL0-hv-36G" id="y1f-lZ-aXD"/>
+                        <outlet property="textViewInfo" destination="DCW-Ba-OoT" id="pXL-sp-WMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw6-Bj-Fxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,8 +177,8 @@
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ejq-4P-EeE" kind="relationship" relationship="viewControllers" id="dls-HW-D1r"/>
                         <segue destination="myJ-gt-T8P" kind="relationship" relationship="viewControllers" id="IQr-vh-yYj"/>
+                        <segue destination="ejq-4P-EeE" kind="relationship" relationship="viewControllers" id="dls-HW-D1r"/>
                         <segue destination="mFA-Ad-z3K" kind="relationship" relationship="viewControllers" id="AcD-Ul-Wda"/>
                     </connections>
                 </tabBarController>
@@ -120,10 +188,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backward.end.fill" catalog="system" width="128" height="102"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
+        <image name="forward.end.alt.fill" catalog="system" width="128" height="66"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="speaker.wave.1.fill" catalog="system" width="128" height="108"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="plus.message" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
