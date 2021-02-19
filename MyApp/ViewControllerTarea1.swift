@@ -10,43 +10,44 @@ import UIKit
 class ViewControllerTarea1: UIViewController {
   @IBOutlet weak var switchDarkBackground: UISwitch!
   @IBOutlet weak var switchMood: UISwitch!
-  @IBOutlet weak var imageViewMood: UIImageView!
+  @IBOutlet weak var imageViewSpeaker: UIImageView!
   @IBOutlet weak var sliderVolume: UISlider!
   @IBOutlet weak var segCtrlVideoPlayer: UISegmentedControl!
   @IBOutlet weak var buttonAdd: UIButton!
-  @IBOutlet weak var textViewInfo: UITextView!
+  @IBOutlet weak var textViewChatBox: UITextView!
   @IBOutlet weak var textFieldPhrase: UITextField!
   var soundLevel = "";
   
   @IBAction func switchOnChangeDarkBackground(_ sender: UISwitch) {
     if switchDarkBackground.isOn {
-      textViewInfo.backgroundColor = UIColor.black;
-      textViewInfo.textColor = UIColor.white;
+      textViewChatBox.backgroundColor = UIColor.black;
+      textViewChatBox.textColor = UIColor.white;
       textFieldPhrase.backgroundColor = UIColor.black;
       textFieldPhrase.textColor = UIColor.white;
     } else {
-      textViewInfo.backgroundColor = UIColor.white;
-      textViewInfo.textColor = UIColor.black;
+      textViewChatBox.backgroundColor = UIColor.white;
+      textViewChatBox.textColor = UIColor.black;
       textFieldPhrase.backgroundColor = UIColor.white;
       textFieldPhrase.textColor = UIColor.black;
     }
   }
   
   @IBAction func onChangeButtonAdd(_ sender: UIButton) {
-    textViewInfo.text += textFieldPhrase.text! + "\r\n";
+    if textFieldPhrase.text!.isEmpty { return; }
+    textViewChatBox.text += textFieldPhrase.text! + "\r\n";
     textFieldPhrase.text = "";
   }
   
   @IBAction func onChangeVideoPlayer(_ sender: UISegmentedControl) {
     switch segCtrlVideoPlayer.selectedSegmentIndex {
     case 0:
-      textViewInfo.text = "Rewind video";
+      textViewChatBox.text = "Rewind video";
     case 1:
-      textViewInfo.text = "Play video";
+      textViewChatBox.text = "Play video";
     case 2:
-      textViewInfo.text = "Pause video";
+      textViewChatBox.text = "Pause video";
     case 3:
-      textViewInfo.text = "Next video";
+      textViewChatBox.text = "Next video";
     default:
       print("default");
     }
@@ -67,15 +68,15 @@ class ViewControllerTarea1: UIViewController {
       print(sliderVolume.value)
     }
     
-    imageViewMood.image = UIImage(systemName: soundLevel);
+    imageViewSpeaker.image = UIImage(systemName: soundLevel);
   }
     
   
   @IBAction func onSwitchChangeMood(_ sender: UISwitch) {
     if switchMood.isOn {
-      imageViewMood.image = UIImage(systemName: "speaker.slash.fill");
+      imageViewSpeaker.image = UIImage(systemName: "speaker.slash.fill");
     } else {
-      imageViewMood.image = UIImage(systemName: soundLevel);
+      imageViewSpeaker.image = UIImage(systemName: soundLevel);
     }
   }
   

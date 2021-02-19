@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mtx-IR-Zfy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mtx-IR-Zfy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -138,13 +138,13 @@
                     <navigationItem key="navigationItem" id="0iw-67-Umn"/>
                     <connections>
                         <outlet property="buttonAdd" destination="jnR-22-pe3" id="S9o-ph-82E"/>
-                        <outlet property="imageViewMood" destination="9bf-25-SkZ" id="hwh-tY-nJX"/>
+                        <outlet property="imageViewSpeaker" destination="9bf-25-SkZ" id="hwh-tY-nJX"/>
                         <outlet property="segCtrlVideoPlayer" destination="WC9-Y6-hH8" id="9xV-je-tFi"/>
                         <outlet property="sliderVolume" destination="EyO-6L-nAr" id="IGY-0q-Qje"/>
                         <outlet property="switchDarkBackground" destination="IEG-jK-VkO" id="3fV-jm-54g"/>
                         <outlet property="switchMood" destination="X6q-Vd-KsA" id="q6x-dY-6xa"/>
                         <outlet property="textFieldPhrase" destination="TL0-hv-36G" id="y1f-lZ-aXD"/>
-                        <outlet property="textViewInfo" destination="DCW-Ba-OoT" id="pXL-sp-WMk"/>
+                        <outlet property="textViewChatBox" destination="DCW-Ba-OoT" id="pXL-sp-WMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gw6-Bj-Fxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
