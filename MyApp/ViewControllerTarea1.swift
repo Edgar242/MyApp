@@ -9,7 +9,7 @@ import UIKit
 
 class ViewControllerTarea1: UIViewController {
   @IBOutlet weak var switchDarkBackground: UISwitch!
-  @IBOutlet weak var switchMood: UISwitch!
+  @IBOutlet weak var switchMute: UISwitch!
   @IBOutlet weak var imageViewSpeaker: UIImageView!
   @IBOutlet weak var sliderVolume: UISlider!
   @IBOutlet weak var segCtrlVideoPlayer: UISegmentedControl!
@@ -73,7 +73,7 @@ class ViewControllerTarea1: UIViewController {
     
   
   @IBAction func onSwitchChangeMood(_ sender: UISwitch) {
-    if switchMood.isOn {
+    if switchMute.isOn {
       imageViewSpeaker.image = UIImage(systemName: "speaker.slash.fill");
     } else {
       imageViewSpeaker.image = UIImage(systemName: soundLevel);
@@ -81,11 +81,20 @@ class ViewControllerTarea1: UIViewController {
   }
   
   override func viewDidLoad() {
-        super.viewDidLoad()
+    print("la vista ya se cargó")
+    super.viewDidLoad()
+    
+      
 
     // Do any additional setup after loading the view.
     
     }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    print("la vista va a aparecer")
+    super.viewWillAppear(animated)
+    
+  }
   
     /*
     // MARK: - Navigation
